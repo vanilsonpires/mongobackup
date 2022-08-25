@@ -6,12 +6,13 @@ services:
       context: .
       args:
         CRON: "* * * * *"
-        MONGO_HOST: "<IP_MONGO_HERE>"
-        MONGO_PORT: "<PORT_MONGO_HERE>"
-        MONGO_PASSWD: "<PASSWORD_MONGO_HERE>"
-        MONGO_USER: "<USER_MONGO_HERE>"
+        MONGO_HOST: "<IP_HERE>"
+        MONGO_PORT: "27017"
+        MONGO_PASSWD: "<PASSWORD_HERE>"
+        MONGO_USER: "<USER_HERE>"
     restart: always
     volumes:
       - mongo-backup:/backups
 volumes:
   mongo-backup:
+  rcclone-config:
