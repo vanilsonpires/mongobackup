@@ -1,5 +1,3 @@
-#!/bin/bash
- 
 export PATH=/bin:/usr/bin:/usr/local/bin
 
 TODAY=`date +"%Y-%m-%d_%H:%M:%S"`

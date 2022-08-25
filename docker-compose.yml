@@ -2,14 +2,16 @@ version: "3.7"
 services:
   mongobackup:
     image: mongobackup
-    build: .
+    build: 
+      context: .
+      args:
+        CRON: "* * * * *"
+        MONGO_HOST: "<IP_MONGO_HERE>"
+        MONGO_PORT: "<PORT_MONGO_HERE>"
+        MONGO_PASSWD: "<PASSWORD_MONGO_HERE>"
+        MONGO_USER: "<USER_MONGO_HERE>"
     restart: always
     volumes:
-      - mongo-backup:/backups     
-    environment:
-     - MONGO_HOST=MY_IP
-     - MONGO_PORT=27017
-     - MONGO_PASSWD=MY_PASSWORD
-     - MONGO_USER=MY_USER
+      - mongo-backup:/backups
 volumes:
   mongo-backup:
